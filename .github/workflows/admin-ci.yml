@@ -19,11 +19,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: 'npm'
-          cache-dependency-path: admin/package-lock.json
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
         working-directory: admin
 
       - name: Type check
@@ -34,7 +32,7 @@ jobs:
         run: npm run build
         working-directory: admin
         env:
-          NEXTAUTH_SECRET: ci-test-secret-32chars
+          NEXTAUTH_SECRET: ci-test-secret-32chars-ok-yes
           NEXTAUTH_URL: http://localhost:3000
           NEXT_PUBLIC_API_URL: http://localhost:3001/api/v1
           ADMIN_EMAIL: admin@test.com
