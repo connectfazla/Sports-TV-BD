@@ -1,0 +1,39 @@
+name: Admin CI
+
+on:
+  push:
+    branches:
+      - main
+      - 'claude/**'
+    paths:
+      - 'admin/**'
+  pull_request:
+    paths:
+      - 'admin/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: admin
+
+      - name: Type check
+        run: npx tsc --noEmit
+        working-directory: admin
+
+      - name: Build
+        run: npm run build
+        working-directory: admin
+        env:
+          NEXTAUTH_SECRET: ci-test-secret-32chars-ok-yes
+          NEXTAUTH_URL: http://localhost:3000
+          NEXT_PUBLIC_API_URL: http://localhost:3001/api/v1
+          ADMIN_EMAIL: admin@test.com
+          ADMIN_PASSWORD: testpassword

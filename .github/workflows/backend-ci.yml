@@ -1,0 +1,57 @@
+name: Backend CI
+
+on:
+  push:
+    branches:
+      - main
+      - 'claude/**'
+    paths:
+      - 'backend/**'
+  pull_request:
+    paths:
+      - 'backend/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: testpass
+          POSTGRES_DB: sportstv_test
+          POSTGRES_USER: sportstv
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: backend
+
+      - name: Type check
+        run: npx tsc --noEmit
+        working-directory: backend
+
+      - name: Build
+        run: npm run build
+        working-directory: backend
+        env:
+          DATABASE_URL: postgresql://sportstv:testpass@localhost:5432/sportstv_test
+          REDIS_URL: redis://localhost:6379
+          JWT_ACCESS_SECRET: test-access-secret-32-chars-long-ok
+          JWT_REFRESH_SECRET: test-refresh-secret-32-chars-long
+          STREAM_HMAC_SECRET: test-stream-hmac-secret-32-chars
+          CONFIG_ENCRYPTION_KEY: "0000000000000000000000000000000000000000000000000000000000000000"
+          ADMIN_EMAIL: admin@test.com
+          ADMIN_PASSWORD: testpassword
