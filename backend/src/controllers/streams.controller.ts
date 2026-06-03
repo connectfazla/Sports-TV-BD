@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-import { v4 as uuidv4 } from 'uuid';
 import { query } from '../config/database';
 import { ok, created, notFound, badRequest } from '../utils/response';
 import { encryptAES, decryptAES } from '../utils/crypto';

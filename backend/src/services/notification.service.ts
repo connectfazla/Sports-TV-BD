@@ -23,11 +23,11 @@ export async function sendPushNotification(params: {
     [roles]
   );
 
-  const tokens = users.map((u: { fcm_token: string }) => u.fcm_token).filter(Boolean);
+  const tokens = users.map((u) => (u as { fcm_token: string }).fcm_token).filter(Boolean);
   if (!tokens.length) return 0;
 
   const messaging = app.messaging();
-  const chunks = [];
+  const chunks: string[][] = [];
   for (let i = 0; i < tokens.length; i += 500) {
     chunks.push(tokens.slice(i, i + 500));
   }
