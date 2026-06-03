@@ -47,8 +47,8 @@ export default function LoginPage() {
               required
               value={form.email}
               onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
-              className="w-full px-3 py-2.5 rounded-lg text-sm outline-none focus:ring-2"
-              style={{ background: '#27272a', border: '1px solid #3f3f46', color: '#fafafa', focusRingColor: '#22c55e' }}
+              className="w-full px-3 py-2.5 rounded-lg text-sm outline-none focus:ring-2 focus:ring-green-500"
+              style={{ background: '#27272a', border: '1px solid #3f3f46', color: '#fafafa' }}
             />
           </div>
           <div>

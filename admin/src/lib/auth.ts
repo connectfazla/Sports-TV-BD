@@ -1,7 +1,7 @@
-import type { NextAuthConfig } from 'next-auth';
+import NextAuth, { type NextAuthConfig } from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
 
-export const authConfig: NextAuthConfig = {
+const config: NextAuthConfig = {
   providers: [
     Credentials({
       credentials: {
@@ -25,3 +25,5 @@ export const authConfig: NextAuthConfig = {
   session: { strategy: 'jwt' },
   secret: process.env.NEXTAUTH_SECRET,
 };
+
+export const { handlers, auth, signIn, signOut } = NextAuth(config);
