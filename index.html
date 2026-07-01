@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nadir Hasan · Creative Developer</title>
+  <meta name="description" content="Portfolio of Nadir Hasan, a creative developer crafting fluid digital experiences for brands that want to be trusted." />
+
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="vendor/phosphor/style.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <script>
+    // Apply saved theme before first paint to avoid a flash
+    (function () {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'dark' || saved === 'light') {
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" data-nav>
+    <a class="nav__logo" href="#top" aria-label="Nadir Hasan, back to top">
+      <span class="nav__logo-mark">N</span>
+      <span class="nav__logo-text">nadir.studio</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav__actions">
+      <button class="theme-toggle" data-theme-toggle aria-label="Switch color theme">
+        <i class="ph ph-moon-stars theme-toggle__moon" aria-hidden="true"></i>
+        <i class="ph ph-sun theme-toggle__sun" aria-hidden="true"></i>
+      </button>
+      <a class="btn btn--sm" href="#contact">
+        Start a project
+        <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" data-hero>
+      <canvas class="hero__canvas" data-fluid-canvas aria-hidden="true"></canvas>
+      <div class="hero__inner">
+        <p class="hero__eyebrow" data-hero-line>
+          <span class="hero__dot" aria-hidden="true"></span>
+          Available for projects · Q3 2026
+        </p>
+        <h1 class="hero__title">
+          <span class="hero__title-line" data-hero-line>Interfaces people</span>
+          <span class="hero__title-line" data-hero-line>actually <em>trust.</em></span>
+        </h1>
+        <p class="hero__sub" data-hero-line>
+          Creative developer building fluid, dependable products for ambitious teams.
+        </p>
+        <div class="hero__cta" data-hero-line>
+          <a class="btn" href="#work">
+            See selected work
+            <i class="ph ph-arrow-down" aria-hidden="true"></i>
+          </a>
+          <a class="link-plain" href="#contact">
+            hello@nadir.studio
+            <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <div class="hero__meta" data-hero-line>
+        <span>Dhaka, Bangladesh</span>
+        <span>UTC +6</span>
+        <span>Scroll <i class="ph ph-caret-double-down" aria-hidden="true"></i></span>
+      </div>
+    </section>
+
+    <!-- ============ CLIENT MARQUEE ============ -->
+    <section class="marquee" aria-label="Selected clients">
+      <div class="marquee__track" data-marquee>
+        <div class="marquee__group">
+          <span>Meridian Bank</span><span aria-hidden="true">✦</span>
+          <span>Halcyon Health</span><span aria-hidden="true">✦</span>
+          <span>Northwind Labs</span><span aria-hidden="true">✦</span>
+          <span>Bluepeak Capital</span><span aria-hidden="true">✦</span>
+          <span>Ostro Airlines</span><span aria-hidden="true">✦</span>
+          <span>Cobalt Insurance</span><span aria-hidden="true">✦</span>
+        </div>
+        <div class="marquee__group" aria-hidden="true">
+          <span>Meridian Bank</span><span>✦</span>
+          <span>Halcyon Health</span><span>✦</span>
+          <span>Northwind Labs</span><span>✦</span>
+          <span>Bluepeak Capital</span><span>✦</span>
+          <span>Ostro Airlines</span><span>✦</span>
+          <span>Cobalt Insurance</span><span>✦</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SELECTED WORK ============ -->
+    <section class="work" id="work">
+      <div class="section-head" data-reveal>
+        <h2 class="section-head__title">Selected work</h2>
+        <p class="section-head__note">Four projects, 2024 to 2026. Each one shipped, measured and still in production.</p>
+      </div>
+
+      <article class="project project--wide" data-reveal>
+        <a class="project__media" href="#contact" aria-label="Meridian Bank case study">
+          <img data-parallax src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80" alt="Analytics dashboard interface for Meridian Bank" loading="lazy" />
+        </a>
+        <div class="project__info">
+          <span class="project__index">01</span>
+          <h3 class="project__title">Meridian Bank</h3>
+          <p class="project__desc">Rebuilt the retail banking dashboard around clarity and speed. Task completion up 34 percent after launch.</p>
+          <ul class="project__tags">
+            <li>Product design</li><li>React</li><li>Design system</li>
+          </ul>
+        </div>
+      </article>
+
+      <div class="project-row">
+        <article class="project project--half" data-reveal>
+          <a class="project__media" href="#contact" aria-label="Halcyon Health case study">
+            <img data-parallax src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80" alt="Telehealth appointment app for Halcyon Health" loading="lazy" />
+          </a>
+          <div class="project__info">
+            <span class="project__index">02</span>
+            <h3 class="project__title">Halcyon Health</h3>
+            <p class="project__desc">A telehealth booking flow that patients over 60 finish without calling support.</p>
+            <ul class="project__tags"><li>UX research</li><li>Accessibility</li></ul>
+          </div>
+        </article>
+
+        <article class="project project--half project--offset" data-reveal>
+          <a class="project__media" href="#contact" aria-label="Ostro Airlines case study">
+            <img data-parallax src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80" alt="Airline booking experience for Ostro Airlines" loading="lazy" />
+          </a>
+          <div class="project__info">
+            <span class="project__index">03</span>
+            <h3 class="project__title">Ostro Airlines</h3>
+            <p class="project__desc">Checkout redesign that cut abandoned bookings by a fifth across three markets.</p>
+            <ul class="project__tags"><li>Frontend</li><li>Motion</li></ul>
+          </div>
+        </article>
+      </div>
+
+      <article class="project project--wide" data-reveal>
+        <a class="project__media" href="#contact" aria-label="Northwind Labs case study">
+          <img data-parallax src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80" alt="Data platform marketing site for Northwind Labs" loading="lazy" />
+        </a>
+        <div class="project__info">
+          <span class="project__index">04</span>
+          <h3 class="project__title">Northwind Labs</h3>
+          <p class="project__desc">Marketing site and interactive product tour for a data platform. Demo requests doubled in one quarter.</p>
+          <ul class="project__tags"><li>WebGL</li><li>GSAP</li><li>Next.js</li></ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about" id="about">
+      <div class="about__sticky">
+        <h2 class="about__title" data-reveal>The short version</h2>
+        <img class="about__portrait" data-reveal src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80" alt="Portrait of Nadir Hasan" loading="lazy" />
+      </div>
+      <div class="about__body">
+        <p class="about__lead" data-reveal>
+          I am Nadir, a creative developer with nine years between design and engineering. I care about the moment a person decides your product is dependable.
+        </p>
+        <p data-reveal>
+          Most of my work sits in fintech, health and travel, places where trust is the whole game. I design in the browser, prototype with real data early, and treat motion as information rather than decoration.
+        </p>
+        <p data-reveal>
+          Before going independent I led the web platform team at a payments company, shipping a design system used by forty engineers daily.
+        </p>
+        <dl class="about__stats" data-reveal>
+          <div><dt data-count="9">0</dt><dd>Years in practice</dd></div>
+          <div><dt data-count="47">0</dt><dd>Projects shipped</dd></div>
+          <div><dt data-count="12">0</dt><dd>Industry awards</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="services" id="services">
+      <div class="section-head" data-reveal>
+        <h2 class="section-head__title">What I do</h2>
+        <p class="section-head__note">Three offers, no retainers hiding in the fine print.</p>
+      </div>
+      <ul class="services__list">
+        <li class="service" data-reveal>
+          <span class="service__num">01</span>
+          <div class="service__main">
+            <h3 class="service__title">Product design</h3>
+            <p class="service__desc">Research, flows, interface and a design system your engineers will not fight. From first sketch to specs.</p>
+          </div>
+          <i class="ph ph-compass service__icon" aria-hidden="true"></i>
+        </li>
+        <li class="service" data-reveal>
+          <span class="service__num">02</span>
+          <div class="service__main">
+            <h3 class="service__title">Creative development</h3>
+            <p class="service__desc">Sites that move with intent. WebGL, scroll choreography and performance budgets that hold on real phones.</p>
+          </div>
+          <i class="ph ph-lightning service__icon" aria-hidden="true"></i>
+        </li>
+        <li class="service" data-reveal>
+          <span class="service__num">03</span>
+          <div class="service__main">
+            <h3 class="service__title">Design engineering</h3>
+            <p class="service__desc">Embedded with your team to build the component library, tokens and docs that keep quality from drifting.</p>
+          </div>
+          <i class="ph ph-stack service__icon" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ TESTIMONIAL ============ -->
+    <section class="quote" aria-label="Testimonial">
+      <figure data-reveal>
+        <blockquote class="quote__text">
+          "Nadir shipped the rebrand in eight weeks and our support tickets about the dashboard simply stopped. He is the rare developer who argues about copy."
+        </blockquote>
+        <figcaption class="quote__cite">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" alt="" loading="lazy" />
+          <span><strong>Sarah Okonkwo</strong><br />VP of Product, Meridian Bank</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- ============ CONTACT / FOOTER ============ -->
+    <footer class="contact" id="contact">
+      <div class="contact__inner">
+        <p class="contact__eyebrow" data-reveal>Have something in mind?</p>
+        <a class="contact__mega" href="mailto:hello@nadir.studio" data-reveal>
+          Let's talk<span class="contact__arrow" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></span>
+        </a>
+        <div class="contact__grid" data-reveal>
+          <div>
+            <h4>Email</h4>
+            <a href="mailto:hello@nadir.studio">hello@nadir.studio</a>
+          </div>
+          <div>
+            <h4>Socials</h4>
+            <a href="#top">Twitter / X</a>
+            <a href="#top">LinkedIn</a>
+            <a href="#top">Dribbble</a>
+          </div>
+          <div>
+            <h4>Studio</h4>
+            <p>Gulshan 2, Dhaka<br />Bangladesh</p>
+          </div>
+        </div>
+        <div class="contact__legal">
+          <span>© 2026 Nadir Hasan. All rights reserved.</span>
+          <span>Set in Space Grotesk and Inter.</span>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="vendor/three.min.js"></script>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/fluid.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
